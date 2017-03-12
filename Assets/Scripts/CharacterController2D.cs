@@ -73,7 +73,7 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     void HandleHorizontalMovement() {
-        moveSpeed.x = Input.GetAxis ("Horizontal") * (maxVelocity / pixelToUnit);
+        moveSpeed.x = (maxVelocity / pixelToUnit);
 
         if (RaycastAgainstLayer ("Ground", groundCheck)) {
             // Acertou o chao
@@ -87,14 +87,6 @@ public class CharacterController2D : MonoBehaviour {
         } else {
             isGrounded = false;
             isRunning = false;
-        }
-
-        if (Input.GetAxis ("Horizontal") < 0 && !isFacingLeft) {
-            // Muda o megaman para esquerda
-            isFacingLeft = true;
-        } else if (Input.GetAxis ("Horizontal") > 0 && isFacingLeft) {
-            // Muda o megaman para direita
-            isFacingLeft = false;
         }
 
         spriterenderer.flipX = isFacingLeft;

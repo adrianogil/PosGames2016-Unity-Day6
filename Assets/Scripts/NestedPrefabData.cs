@@ -27,6 +27,7 @@ public class GameObjectData {
 
     public void CopyFrom(Transform transformObject)
     {
+
         positionX = transformObject.localPosition.x;
         positionY = transformObject.localPosition.y;
         positionZ = transformObject.localPosition.z;
